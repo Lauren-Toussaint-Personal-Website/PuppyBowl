@@ -1,0 +1,118 @@
+
+ .modal {
+   display: none;
+   /* Hidden by default */
+   position: sticky;
+   top: 0;
+   z-index: 99;
+   padding-top: 100px;
+   /* Location of the box */
+   left: 0;
+   top: 0;
+   width: 100%;
+   /* Full width */
+   height: 100%;
+   /* Full height */
+   overflow: auto;
+   /* Enable scroll if needed */
+   background-color: rgb(0, 0, 0);
+   /* Fallback color */
+   background-color: rgba(0, 0, 0, 0.4);
+   /* Black w/ opacity */
+ }
+
+ #addNewPlayer {
+   background-color: cornflowerblue;
+   color: #FFFFFF;
+   border: none;
+   padding: 5px;
+   border-radius: 5px;
+   border: 2px solid #FFFFFF
+ }
+
+ /* Modal Content */
+ .modal-content {
+   background-color: #fefefe;
+   margin: auto;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+ }
+
+ /* The Close Button */
+ .close {
+   color: #aaaaaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+ }
+
+ .close:hover,
+ .close:focus {
+   color: #000;
+   text-decoration: none;
+   cursor: pointer;
+ }
+#new-player-form {
+  display: grid;
+  z-index: 99;
+  align-items: center;
+  background-color: bisque;
+}
+
+.player-container {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.players {
+  border: 1px solid black;
+  width: 250px;
+  height: 450px;
+  word-wrap: break-word;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 10px;
+  
+ } 
+
+ .player-img {
+    height: 200px;
+    width: 250px;
+    border-radius: 10px;
+  }
+
+  .details-button { 
+    background-color: cornflowerblue;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF
+  }
+
+  .delete-button { 
+    background-color: tomato;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;   
+    border: 2px solid #FFFFFF
+  }
+
+  .delete-button:hover {
+    color: tomato;
+    background-color: #FFFFFF;
+    border: 2px solid tomato
+  }
+
+  .details-button:hover {
+    color: cornflowerblue;
+    background-color: #FFFFFF;
+    border: 2px solid cornflowerblue
+  }
+
+   
