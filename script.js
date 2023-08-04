@@ -39,11 +39,21 @@ const renderPlayerList = (players) => {
     playerList.innerHTML = `<h2>${player.name}</h2><p>${player.id}</p><p>${player.status}</p><p>${player.breed}</p><img class="player-img" src=${player.imageUrl}></><br /><button id="${player.name}_viewDetails" class="details-button">View Details</button><button class="delete-button">Delete Player</button>`;
     document
       .getElementById(`${player.name}_viewDetails`)
-      .addEventListener("click", () => {
-        console.log(`clicked ${player.name} view details button`);
-        renderSinglePlayerById(player.id);
-      });
-  });
+      .addEventListener("click", async () => {
+      console.log(`clicked ${player.name} view ".details-button"`);
+  
+        try {
+
+        await renderSinglePlayerById(player.id);
+        console.log("Hello World!")
+  
+        } catch (error) {
+console.error(error)
+
+        }
+        
+  })
+})
 };
 
 const fetchSinglePlayer = async (playerId) => {
@@ -178,26 +188,43 @@ const renderSinglePlayerById = async (id) => {
   try {
     const response = await fetch(`${PLAYERSBYID_API_URL}/${id}`);
     const singlePlayerById = await response.json(id)?.data;
+
+    console.log(response)
     const main = document.getElementById("main");
     const divSinglePlayerForm = document.createElement("div");
     main.appendChild(divSinglePlayerForm);
     const SinglePlayerForm = document.createElement("form");
 
     divSinglePlayerForm.appendChild(SinglePlayerForm);
-    // SinglePlayerForm.appendChild(".details-button")
     SinglePlayerForm.classList.add("single-player");
-    SinglePlayerForm.innerHTML =`<form><label for="title">Player Details</label></br><label for="id">${player.id}</label></br><label for="name">${player.name}</label></br><label for="breed">${player.breed}</label></br><label for="status">${player.status}</label></br><label for="url">${player.imageUrl}</label></br><button class="close-button">Close</button></form>`;
-
+    SinglePlayerForm.innerHTML =`<form> <label for="title">Player Details</label>
+      </br>
+      <label for="id">Pup Id</label>
+      
+      <label for="name">Pup Name${player.name}</label>
+      </br>
+      <label for="breed">Pup Breed${player.breed}</label>
+      </br>
+      <label for="status">Pup Status${player.status}</label>
+      </br></br>
+      <label for="image">Pup Status${player.imageUrl}</label>
+      </br></br>
+      <button class="close-button">Close</button></form>`;
+ 
     const closeButton = SinglePlayerForm.querySelector(".close-button");
     closeButton.addEventListener("click", () => {
       divSinglePlayerForm.remove();
+     
     });
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
   }
 };
 
+
+      
 const deletePlayer = async (id) => {
+  const deleteButton = document.querySelector(".delete-button");
   deleteButton.addEventListener("click", async (event) => {
     try {
       const response = await fetch(`${PLAYERS_API_URL}`)({
@@ -206,16 +233,20 @@ const deletePlayer = async (id) => {
 
       const deletePlayer = await response.json(id);
 
-      const id = await deletePlayer(id);
-
-      return remaining;
+      const remainingPlayers = await fetchAllPlayers()
+          render(remainingPlayers)
 
       console.log(remainingPlayers(id));
     } catch (e) {
       console.error(e);
     }
+
+
+ 
   });
 };
+
+  
 // const deleteButton = newPlayerForm.querySelector(".delete-button");
 //       deleteButton.addEventListener("click", async (event) => {
 

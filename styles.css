@@ -54,13 +54,13 @@
    cursor: pointer;
  }
 #new-player-form {
-  display: grid;
-  z-index: 99;
+  display: flex;
   align-items: center;
   background-color: bisque;
 }
 
 .player-container {
+  background-color:rgb(113, 172, 54);
   align-items: center;
   flex-wrap: wrap;
   display: flex;
@@ -68,7 +68,8 @@
 }
 
 .players {
-  border: 1px solid black;
+  background-color: rgb(240, 170, 170);
+  border: 2px solid lawngreen;
   width: 250px;
   height: 450px;
   word-wrap: break-word;
@@ -81,7 +82,10 @@
  .player-img {
     height: 200px;
     width: 250px;
+    padding: 2 px;
+    border: 12 px solid lawngreen;
     border-radius: 10px;
+
   }
 
   .details-button { 
@@ -92,6 +96,11 @@
     border-radius: 5px;
     border: 2px solid #FFFFFF
   }
+        .details-button:hover {
+          color: cornflowerblue;
+          background-color: #FFFFFF;
+          border: 2px solid cornflowerblue
+        }
 
   .delete-button { 
     background-color: tomato;
@@ -103,16 +112,22 @@
     border: 2px solid #FFFFFF
   }
 
-  .delete-button:hover {
-    color: tomato;
-    background-color: #FFFFFF;
-    border: 2px solid tomato
-  }
+        .delete-button:hover {
+        color: tomato;
+        background-color: #FFFFFF;
+        border: 2px solid tomato
+      }
 
-  .details-button:hover {
-    color: cornflowerblue;
-    background-color: #FFFFFF;
-    border: 2px solid cornflowerblue
-  }
+.single-player {
+  display: flex;
+  border: 1px solid black;
+  background-color: goldenrod;
+  width: 250px;
+  height: 450px;
+  word-wrap: break-word;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 10px;
 
+}
    
