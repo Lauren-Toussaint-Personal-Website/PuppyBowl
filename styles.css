@@ -1,5 +1,7 @@
 
- .modal {
+ 
+ 
+ .myModal {
    display: none;
    /* Hidden by default */
    position: sticky;
@@ -21,6 +23,12 @@
    /* Black w/ opacity */
  }
 
+
+
+
+
+
+
  #addNewPlayer {
    background-color: cornflowerblue;
    color: #FFFFFF;
@@ -41,8 +49,8 @@
 
  /* The Close Button */
  .close {
-   color: #aaaaaa;
-   float: right;
+   color: lawngreen;
+   float:inline-start;
    font-size: 28px;
    font-weight: bold;
  }
@@ -68,8 +76,8 @@
 }
 
 .players {
-  background-color: rgb(240, 170, 170);
-  border: 2px solid lawngreen;
+  background-color: rgb(216, 193, 196);
+  border: 2px solid salmon;
   width: 250px;
   height: 450px;
   word-wrap: break-word;
@@ -118,7 +126,10 @@
         border: 2px solid tomato
       }
 
-.single-player {
+.single_player_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   display: flex;
   border: 1px solid black;
   background-color: goldenrod;
@@ -128,6 +139,24 @@
   padding: 10px;
   border-radius: 10px;
   margin: 10px 10px;
-
 }
-   
+
+.close-button {
+  background-color: lawngreen;
+  float: inline-start;
+  color: rgb(154, 129, 97);
+  font-size: 20 px;
+  font-weight: bold;
+  border: lightcoral;
+  border-radius: 5px;
+  
+}
+
+ .addPlayerButton {
+   display: inline-flex;
+   position: top;
+   margin-top: 5px;
+   z-index: 99;
+   background-color: navajowhite;
+   color: navy;
+   font-size: 24 px;
